@@ -1,0 +1,38 @@
+.page {
+  background: url(../images/sound-dj-machine.jpg) center center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Viga', sans-serif;
+  &__keys {
+    display: flex;
+    justify-content: center;
+    &--key {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border: 2px solid black;
+      border-radius: 5px;
+      width: 60px;
+      height: 50px;
+      margin: 0px 10px 0px 10px;
+      kbd{
+          color: white;
+          font-size: x-large;
+      }
+      .sound{
+          color: goldenrod;
+          text-transform: uppercase;
+          font-size: x-small;
+      }
+    }
+  }
+}
+
+.golgen-border{
+    border-color: goldenrod;
+    box-shadow: 1px 0px 14px -1px rgba(231,166,26,1);
+}
