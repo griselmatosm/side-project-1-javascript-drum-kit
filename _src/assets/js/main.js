@@ -3,15 +3,6 @@
 
 const keys = document.querySelectorAll('.page__keys--key');
 
-
-// const handleClick = (ev) => {
-//   const selectedKey = ev.currentTarget;
-//   console.log(selectedKey);
-//   selectedKey.classList.toggle('golden-border');
-// };
-
-
-
 function handleKey(ev){
   const audio = document.querySelector(`audio[data-key="${ev.keyCode}"]`);
   if (!audio) return;
