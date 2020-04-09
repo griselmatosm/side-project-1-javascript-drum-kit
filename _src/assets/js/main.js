@@ -3,13 +3,35 @@
 
 const keys = document.querySelectorAll('.page__keys--key');
 
+
+// const handleClick = (ev) => {
+//   const selectedKey = ev.currentTarget;
+//   console.log(selectedKey);
+//   selectedKey.classList.toggle('golden-border');
+// };
+
+
+
 function handleKey(ev){
-  const selectedKey = ev.currentTarget;
-  selectedKey.classList.toggle('golgen-border');
+  const audio = document.querySelector(`audio[data-key="${ev.keyCode}"]`);
+  if (!audio) return;
+  audio.currentTime = 0;
+  audio.play();
+
+  const key = document.querySelector(`.page__keys--key[data-key="${ev.keyCode}"]`);
+  key.classList.add('golden-border');
 }
+
+const removeTransition = (ev) => {
+  if (ev.propertyName !== 'transform') return;
+  console.log(ev.target);
+  ev.target.classList.remove('golden-border');
+};
 
 
 keys.forEach(key => {
-  key.addEventListener('click', handleKey);
+  key.addEventListener('transitionend', removeTransition);
 });
+
+window.addEventListener('keydown', handleKey);
 
